@@ -19,19 +19,16 @@ export default class Slide {
     event.preventDefault();
     this.dist.startX = event.clientX;
     this.wrapper.addEventListener('mousemove', this.onMove);
-    console.log('clicou ')
   }
 
   onMove(event) {
     const finalPosition = this.updatePosition(event.clientX);
     this.moveSlide(finalPosition);
-    console.log('moveu')
   }
 
   onEnd(event) {
     this.wrapper.removeEventListener('mousemove', this.onMove);
     this.dist.finalPosition = this.dist.movePosition;
-    console.log('fim')
   }
 
   addSlideEvents() {
